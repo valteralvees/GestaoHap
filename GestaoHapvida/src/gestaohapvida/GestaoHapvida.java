@@ -18,10 +18,14 @@ public class GestaoHapvida {
         System.out.println("1- Indicar estado atual do paciente");
         System.out.println("2- Atualizar estado atual do paciente");
         System.out.println("3- Gerar número do protocolo de atendimento do paciente");
+        System.out.println("4- Mostrar nome de familiares na lista de contatos:");
+        //Arrays
+        String [] familiares = {"Sandra Marques", "Givaldo Alves"};
         int escolha = teclado.nextInt();
         switch (escolha){
             case 1:
                 System.out.println("");
+                
             break;
             case 2:
                 System.out.println("Digite o procedimento desejado");
@@ -30,15 +34,34 @@ public class GestaoHapvida {
                 System.out.println("3- Registrar internação");
                 System.out.println("4- Registrar autorização");
                 System.out.println("5- Registrar óbito");
-                int numProcedimento = teclado.nextInt();
-                if (numProcedimento==1){
-                    u001.atualizaStatus(1);
-                } else {
-                    
-                }
+                int escolhaFront = teclado.nextInt();
+                switch (escolhaFront){
+                    case 1:
+                        u001.atualizaStatus(1);
+                    break;
+                    case 2:
+                        u001.atualizaStatus(2);
+                    break;
+                    case 3:
+                        u001.atualizaStatus(3);
+                    break;
+                    case 4:
+                        u001.atualizaStatus(4);
+                    break;
+                    case 5:
+                        u001.atualizaStatus(5);
+                    break; 
+                };
             break;
             case 3:
                 System.out.println("Gerar número de protocolo...");
+            break;
+            case 4:
+                //For each
+                for (String familiar: familiares){
+                    System.out.println(familiar);
+                }
+            break;
         }
         
     }
